@@ -313,7 +313,7 @@ var component = normalizeComponent(
 
 
 
-external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component('color-table', ColorTable);
+external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component('vtw-color-table', ColorTable);
 
 /* harmony default export */ var src = (ColorTable);
 
