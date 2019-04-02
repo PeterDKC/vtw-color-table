@@ -19,5 +19,5 @@
     "scripts": {
         "build": "vue-cli-service build --target lib --name @peterdkc/vtw-color-table src/index.js"
     },
-    "main": "dist/vtw-color-table.common.js"
+    "main": "dist/@peterdkc/vtw-color-table.common.js"
 }
