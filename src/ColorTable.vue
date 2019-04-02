@@ -16,16 +16,9 @@
 
 <script>
     export default {
-        props: {
-            tailwindFile: {
-                type: String,
-                required: true
-            }
-        },
-
         data() {
             return {
-                colors: null,
+                colors: tailwindColors,
                 colorTable: [],
                 displayTable: "none"
             }
@@ -43,7 +36,8 @@
             doColors() {
                 let row = 0,
                     cell = 0,
-                    color;
+                    color,
+                    colors = this.colors;
 
                 for (color in colors) {
                     if (! this.colorTable[row]) {
@@ -74,7 +68,6 @@
         },
 
         created() {
-            this.colors = require(this.tailwindFile).colors;
             this.doColors();
         }
     }

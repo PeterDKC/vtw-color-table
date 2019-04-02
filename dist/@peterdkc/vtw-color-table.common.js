@@ -110,12 +110,12 @@ if (typeof window !== 'undefined') {
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!/usr/local/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/usr/local/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/ColorTable.vue?vue&type=template&id=6b3f9659&
+// CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"553e40dc-vue-loader-template"}!/usr/local/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!/usr/local/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/ColorTable.vue?vue&type=template&id=4e570dba&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"bg-white p-6 m-4 rounded"},[_c('a',{attrs:{"href":"#"},on:{"click":_vm.toggleTable}},[_vm._v("\n        Color Table ("+_vm._s(_vm.colorTable.length)+" rows)\n        "),(_vm.tableIsOpen)?_c('span',[_vm._v("-")]):_vm._e(),(! _vm.tableIsOpen)?_c('span',[_vm._v("+")]):_vm._e()]),_vm._l((_vm.colorTable),function(row){return _c('div',{staticClass:"flex",style:({ display: _vm.displayTable })},_vm._l((row),function(cell){return _c('div',{staticClass:"flex-1 p-2 m-1 rounded text-sm",style:({ 'background-color': cell.color, 'color': cell.textColor })},[_vm._v("\n            "+_vm._s(cell.name)+" - "+_vm._s(cell.color)+"\n        ")])}),0)})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/ColorTable.vue?vue&type=template&id=6b3f9659&
+// CONCATENATED MODULE: ./src/ColorTable.vue?vue&type=template&id=4e570dba&
 
 // CONCATENATED MODULE: /usr/local/lib/node_modules/@vue/cli-service/node_modules/cache-loader/dist/cjs.js??ref--0-0!/usr/local/lib/node_modules/@vue/cli-service/node_modules/vue-loader/lib??vue-loader-options!./src/ColorTable.vue?vue&type=script&lang=js&
 //
@@ -136,16 +136,9 @@ var staticRenderFns = []
 //
 
 /* harmony default export */ var ColorTablevue_type_script_lang_js_ = ({
-    props: {
-        tailwindFile: {
-            type: String,
-            required: true
-        }
-    },
-
     data() {
         return {
-            colors: null,
+            colors: tailwindColors,
             colorTable: [],
             displayTable: "none"
         }
@@ -163,7 +156,8 @@ var staticRenderFns = []
         doColors() {
             let row = 0,
                 cell = 0,
-                color;
+                color,
+                colors = this.colors;
 
             for (color in colors) {
                 if (! this.colorTable[row]) {
@@ -194,7 +188,6 @@ var staticRenderFns = []
     },
 
     created() {
-        this.colors = __webpack_require__("4fe4")(this.tailwindFile).colors;
         this.doColors();
     }
 });
@@ -330,21 +323,6 @@ external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component('color-table', 
 /* harmony default export */ var entry_lib = __webpack_exports__["default"] = (src);
 
 
-
-/***/ }),
-
-/***/ "4fe4":
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	var e = new Error("Cannot find module '" + req + "'");
-	e.code = 'MODULE_NOT_FOUND';
-	throw e;
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = "4fe4";
 
 /***/ }),
 
