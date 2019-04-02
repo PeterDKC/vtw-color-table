@@ -15,11 +15,17 @@
 </template>
 
 <script>
-    const colors = require('../../../tailwind.js').colors;
-
     export default {
+        props: {
+            tailwindFile: {
+                type: String,
+                required: true
+            }
+        },
+
         data() {
             return {
+                colors: null,
                 colorTable: [],
                 displayTable: "none"
             }
@@ -68,6 +74,7 @@
         },
 
         created() {
+            this.colors = require(this.tailwindFile).colors;
             this.doColors();
         }
     }
