@@ -14,8 +14,7 @@
         "url": "https://github.com/PeterDKC/vtw-color-table"
     },
     "dependencies": {
-        "vue": "^2.6.10",
-        "vue-template-compiler": "^2.6.10"
+        "vue": "^2.6.10"
     },
     "scripts": {
         "build": "vue-cli-service build --target lib --name @peterdkc/vtw-color-table src/ColorTable.vue"
