@@ -1,6 +1,6 @@
 {
     "name": "@peterdkc/vtw-color-table",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "A TailwindCSS color palette viewer using VueJS",
     "keywords": [
         "TailwindCSS",
