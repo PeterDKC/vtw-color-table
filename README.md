@@ -14,6 +14,8 @@ This package lets you easily drop a Vue component into your site to see a list o
 
 ![Example](./vtw-color-table.png "Example")
 
+[Full Size Image](https://raw.githubusercontent.com/PeterDKC/vtw-color-table/HEAD/vtw-color-table.png)
+
 ## Installation
 
 `npm i --save @peterdkc/vtw-color-table`
