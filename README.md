@@ -12,7 +12,7 @@ If you're like me, you open up your Tailwind.js file, look at a big blob of Hex 
 
 This package lets you easily drop a Vue component into your site to see a list of your colors in a clean pretty table.
 
-![Example](./vtw-color-table.png "Example")
+![Example](./vtw-color-table.png "Example"){:target="_blank"}
 
 [Full Size Image](https://raw.githubusercontent.com/PeterDKC/vtw-color-table/HEAD/vtw-color-table.png)
 
