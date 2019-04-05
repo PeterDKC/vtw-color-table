@@ -1,21 +1,25 @@
 <template>
     <div class="bg-white p-6 m-4 rounded">
-        <a href="#" @click="toggleTable">
-            Color Table ({{ colorTable.length }} rows)
-            <span v-if="tableIsOpen">-</span>
-            <span v-if="! tableIsOpen">+</span>
-        </a>
+        <div class="w-full text-center">
+            <a href="#" @click="toggleTable" class="bold rounded border border-blue-dark p-2 bg-blue-dark text-white hover:bg-white hover:text-blue-dark no-underline">
+                Color Table ({{ colorTable.length }} rows)
+                <span v-if="tableIsOpen">-</span>
+                <span v-if="! tableIsOpen">+</span>
+            </a>
+        </div>
 
-        <div v-for="row in colorTable" class="flex" :style="{ display: displayTable }">
-            <div v-for="cell in row"
-                class="flex-1 p-2 m-1 rounded text-sm"
-                :class="{ border: cell.border }"
-                :style="{
-                    'background-color': cell.color,
-                    'color': cell.textColor
-                }"
-            >
-                {{ cell.name }} - {{cell.color}}
+        <div class="pt-4" :style="{ display: displayTable }">
+            <div v-for="row in colorTable" class="flex">
+                <div v-for="cell in row"
+                    class="flex-1 p-2 m-1 rounded text-sm font-medium"
+                    :class="{ border: cell.border }"
+                    :style="{
+                        'background-color': cell.color,
+                        'color': cell.textColor
+                    }"
+                >
+                    {{ cell.name }} - {{cell.color}}
+                </div>
             </div>
         </div>
     </div>
@@ -36,7 +40,7 @@
                 event.preventDefault();
 
                 this.displayTable = (this.displayTable === "none") ?
-                    "flex" :
+                    "block" :
                     "none";
             },
 
