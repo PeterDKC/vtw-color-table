@@ -7,7 +7,14 @@
         </a>
 
         <div v-for="row in colorTable" class="flex" :style="{ display: displayTable }">
-            <div v-for="cell in row" class="flex-1 p-2 m-1 rounded text-sm" :style="{ 'background-color': cell.color, 'color': cell.textColor }">
+            <div v-for="cell in row"
+                class="flex-1 p-2 m-1 rounded text-sm"
+                :class="{ border: cell.border }"
+                :style="{
+                    'background-color': cell.color,
+                    'color': cell.textColor
+                }"
+            >
                 {{ cell.name }} - {{cell.color}}
             </div>
         </div>
@@ -36,6 +43,7 @@
             doColors() {
                 let row = 0,
                     cell = 0,
+                    greyscaleRow = 0,
                     color,
                     colors = this.colors;
 
@@ -44,7 +52,7 @@
                         this.colorTable[row] = [];
                     }
 
-                    if (cell > 5 || color == "black" || color == "transparent" || color == "white") {
+                    if (cell > 5 || this.isGreyscale(color)) {
                         cell = 0;
                         row++;
 
@@ -54,10 +62,43 @@
                     this.colorTable[row].push({
                         name: color,
                         color: colors[color],
-                        textColor: cell < 2 ? "white": "black"
+                        textColor: cell < 2 ? "white": "black",
+                        border: false
                     });
+
                     cell++;
                 }
+
+                greyscaleRow = row + 1;
+
+                this.colorTable[greyscaleRow] = [];
+
+                for (color in colors) {
+                    if (this.isGreyscale(color)) {
+                        this.colorTable[greyscaleRow].push({
+                            name: color,
+                            color: colors[color],
+                            textColor: this.greyscaleTextColor(color),
+                            border: this.greyscaleBorder(color)
+                        });
+                    }
+                }
+
+                console.dir(this.colorTable);
+            },
+
+            isGreyscale(color) {
+                return color == "black" || color == "transparent" || color == "white";
+            },
+
+            greyscaleTextColor(color) {
+                if (color == "black") return "white";
+
+                return "black";
+            },
+
+            greyscaleBorder(color) {
+                return color !== "black";
             }
         },
 
